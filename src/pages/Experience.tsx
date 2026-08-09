@@ -32,7 +32,7 @@ import React from 'react';
           'Troubleshot vacuum pump failures by identifying bearing defects and restoring operation through part replacement',
           'Tested recumbent human-powered vehicle designs to evaluate ergonomics, handling, and aerodynamic performance',
         ],
-        stack: [''],
+        stack: [],
       },
       {
         id: '3',
