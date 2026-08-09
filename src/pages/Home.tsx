@@ -1,7 +1,7 @@
 import React from 'react';
     import { motion } from 'framer-motion';
     import { Link } from 'react-router-dom';
-    import { ArrowRight, Code2, Server, Cpu, Cloud } from 'lucide-react';
+    import { ArrowRight, Code2, Cpu, Wrench, Layers} from 'lucide-react';
     import Layout from '../components/Layout';
     import SectionHeading from '../components/SectionHeading';
     import ProjectCard, { Project } from '../components/ProjectCard';
@@ -68,10 +68,10 @@ import React from 'react';
     ];
 
     const skills = [
-      { icon: Code2, label: 'Backend Systems', value: 'Go · Rust · TypeScript' },
-      { icon: Server, label: 'Infrastructure', value: 'K8s · Docker · Terraform' },
-      { icon: Cpu, label: 'Performance', value: 'Profiling · Optimization' },
-      { icon: Cloud, label: 'Cloud Platforms', value: 'AWS · GCP · Azure' },
+      { icon: Code2, label: 'Languages', value: 'C++ · Python · Java · C# · JSON · HTML/CSS · VBA' },
+      { icon: Wrench, label: 'Developer Tools', value: 'Git · GitLab · VS Code · Unity · Processing · Power Apps · Power Automate},
+      { icon: Cpu, label: 'CAD & Simulation', value: 'SolidWorks · AutoCAD · Ansys · FlexSim' },
+      { icon: Layers, label: 'Quality & Process', value: 'Lean Six Sigma · DMAIC · Root Cause Analysis · 5S' },
     ];
 
     const Home: React.FC = () => {
