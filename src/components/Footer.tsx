@@ -1,6 +1,6 @@
 import React from 'react';
     import { Link } from 'react-router-dom';
-    import { Github, Linkedin, Twitter, Mail, Terminal } from 'lucide-react';
+    import { Github, Linkedin, Mail, Terminal } from 'lucide-react';
 
     const Footer: React.FC = () => {
       return (
@@ -22,10 +22,9 @@ import React from 'react';
                 </p>
                 <div className="flex items-center gap-3 mt-6">
                   {[
-                    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-                    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-                    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-                    { icon: Mail, href: 'mailto:hello@example.com', label: 'Email' },
+                    { icon: Github, href: 'https://github.com/choi9948', label: 'GitHub' },
+                    { icon: Linkedin, href: 'https://www.linkedin.com/in/seungheechoi/', label: 'LinkedIn' },
+                    { icon: Mail, href: 's234choi@uwaterloo.com', label: 'Email' },
                   ].map(({ icon: Icon, href, label }) => (
                     <a
                       key={label}
