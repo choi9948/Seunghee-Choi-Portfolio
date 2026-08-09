@@ -228,7 +228,7 @@ import React from 'react';
                     open-source collaborations.
                   </p>
                   <a
-                    href="mailto:hello@example.com"
+                    href="mailto:s234choi@uwaterloo.ca"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[hsl(var(--accent))] text-white font-semibold hover:scale-105 transition-transform"
                   >
                     Get in Touch
