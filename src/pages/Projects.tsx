@@ -51,7 +51,7 @@ import React, { useState, useMemo } from 'react';
       const [filter, setFilter] = useState('All');
 
       const filtered = useMemo(() => {
-        if (filter === 'All') return allProjects;
+        if (filter.toLowerCase() === 'all') return allProjects;
         return allProjects.filter((p) => p.tags.includes(filter));
       }, [filter]);
 
