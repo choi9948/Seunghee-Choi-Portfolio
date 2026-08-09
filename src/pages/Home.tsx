@@ -167,7 +167,7 @@ import React from 'react';
                 <SectionHeading
                   eyebrow="Selected Work"
                   title="Featured Projects"
-                  description="A selection of systems and tools I've designed and built."
+                  description="A selection of electromechanical prototypes and physical automation projects spanning CAD design, FEA analysis, firmware, and software integration."
                 />
                 <Link
                   to="/projects"
