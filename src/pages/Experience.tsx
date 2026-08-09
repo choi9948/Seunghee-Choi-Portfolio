@@ -36,10 +36,10 @@ import React from 'react';
       },
       {
         id: '3',
-        role: 'Designed and structurally optimized wind turbine mechanical component using advanced CAD modeling and finite element analysis',
+        role: 'Mechanical Designer',
         company: 'WATurbine',
         period: 'Jan 2026 — May 2026',
-        description: 'Developed and maintained customer-facing APIs and internal tooling.',
+        description: 'Designed and structurally optimized wind turbine mechanical component using advanced CAD modeling and finite element analysis.',
         achievements: [
           'Designed a wind turbine blade mount in SolidWorks using skeleton and master modeling to improve load distribution',
           'Incorporated reinforced clamps, ribs and threaded holes to secure hollow fiberglass blades and reduce deformation',
