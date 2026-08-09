@@ -43,27 +43,27 @@ import React from 'react';
     const recentExperience: Experience[] = [
       {
         id: '1',
-        role: 'Senior Software Engineer',
-        company: 'Cloud Systems Inc.',
-        period: '2023 — Present',
-        description: 'Leading the platform infrastructure team building next-gen cloud orchestration tools.',
+        role: 'Lean Performance Systems Assistant',
+        company: 'S&C Electric Ltd.',
+        period: 'May 2026 — Aug 2026',
+        description: 'Optimized manufacturing workflows and quality controls while digitizing continuous improvement operations.',
         achievements: [
-          'Reduced deployment time by 70% through pipeline optimization',
-          'Designed multi-region failover system handling 50M+ users',
+          'Collected time study data and developed FlexSim process simulations for welding operations, optimizing workstation layouts to increase weekly manufacturing thorughput by 50%',
+          'Collaborated with QA teams and paint line operators to establish 3 SOPs for colour changeovers and coating applications for electrostatic paint guns, conducting trials that reduced TA% powder paint waste by 26%',
         ],
-        stack: ['Go', 'Kubernetes', 'AWS', 'Terraform'],
+        stack: ['FlexSim', 'VBA', 'Power Apps', 'Power Automate', 'JSON', 'Azure'],
       },
       {
         id: '2',
-        role: 'Backend Engineer',
-        company: 'DataFlow Labs',
-        period: '2020 — 2023',
-        description: 'Built core data processing infrastructure for real-time analytics platform.',
+        role: 'Mechanical Team Member',
+        company: 'University of Toronto Human Powered Vehicles Design Team',
+        period: 'May 2026 — Aug 2026',
+        description: 'Designed, fabricated, and repaired composite structures and mechanical subsystems for high-performance human-powered vehicles.',
         achievements: [
-          'Scaled event pipeline to 2M+ events per second',
-          'Implemented circuit breaker pattern reducing cascading failures by 90%',
+          'Diagnosed composite delamination in pontoon structures due to poor layer adhesion and rebuilt damaged sections',
+          'Reverse-engineered a vehicle lid using an epoxy-bonded male foam mold, sanding refinement, and carbon fiber layup',
         ],
-        stack: ['Rust', 'Kafka', 'PostgreSQL', 'gRPC'],
+        stack: [],
       },
     ];
 
