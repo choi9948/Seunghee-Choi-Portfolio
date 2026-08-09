@@ -106,9 +106,8 @@ import React from 'react';
                   </span>
                 </h1>
                 <p className="text-lg md:text-xl text-[hsl(var(--muted-foreground))] leading-relaxed mb-8 max-w-2xl">
-                  Software engineer specializing in distributed systems, cloud
-                  infrastructure, and high-performance backend architecture.
-                  Building the backbone of products used by millions.
+                  Mechatronics engineer specializing in robotics, embedded systems, and autonomous controls. Bridging mechanical design, electronics, and firmware to build intelligent 
+                  electromechanical systems that seamlessly interact with the physical world.
                 </p>
                 <div className="flex flex-wrap items-center gap-4">
                   <Link
