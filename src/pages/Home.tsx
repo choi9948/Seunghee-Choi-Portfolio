@@ -95,15 +95,14 @@ import React from 'react';
                 transition={{ duration: 0.5 }}
                 className="max-w-3xl"
               >
-                <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[hsl(var(--muted-foreground))]">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[hsl(var(--muted-foreground))]">
                   <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                    Available for new opportunities
-                  </span>
-                  <span className="text-xs font-mono tracking-widest uppercase text-[hsl(var(--accent))] font-semibold">
-                    Seunghee Choi
-                  </span>
-                </div>             
+                  Available for new opportunities
+                </span>
+                <p className="text-sm md:text-base font-mono uppercase tracking-widest text-[hsl(var(--accent))] font-semibold mb-2">
+                  Seunghee Choi — Mechatronics Engineer
+                </p>
+
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.05] mb-6">
                   Engineering systems that{' '}
                   <span className="bg-gradient-to-r from-[hsl(var(--accent))] to-[hsl(var(--chart-3))] bg-clip-text text-transparent">
