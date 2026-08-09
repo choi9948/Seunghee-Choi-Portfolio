@@ -24,7 +24,7 @@ import React from 'react';
                   {[
                     { icon: Github, href: 'https://github.com/choi9948', label: 'GitHub' },
                     { icon: Linkedin, href: 'https://www.linkedin.com/in/seungheechoi/', label: 'LinkedIn' },
-                    { icon: Mail, href: 's234choi@uwaterloo.com', label: 'Email' },
+                    { icon: Mail, href: 'mailto:s234choi@uwaterloo.ca', label: 'Email' },
                   ].map(({ icon: Icon, href, label }) => (
                     <a
                       key={label}
