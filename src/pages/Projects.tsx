@@ -45,7 +45,7 @@ import React, { useState, useMemo } from 'react';
       },
     ];
 
-    const allTags = ['Mechanical', 'Software'];
+    const allTags = ['All', 'Mechanical', 'Software'];
 
     const Projects: React.FC = () => {
       const [filter, setFilter] = useState('All');
