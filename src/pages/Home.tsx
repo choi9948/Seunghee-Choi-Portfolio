@@ -69,8 +69,8 @@ import React from 'react';
 
     const skills = [
       { icon: Code2, label: 'Languages', value: 'C++ · Python · Java · C# · JSON · HTML/CSS · VBA' },
-      { icon: Wrench, label: 'Developer Tools', value: 'Git · GitLab · VS Code · Unity · Processing · Power Apps · Power Automate},
-      { icon: Cpu, label: 'CAD & Simulation', value: 'SolidWorks · AutoCAD · Ansys · FlexSim' },
+      { icon: Cpu, label: 'Developer Tools', value: 'Git · GitLab · VS Code · Unity · Processing · Power Apps · Power Automate},
+      { icon: Wrench, label: 'CAD & Simulation', value: 'SolidWorks · AutoCAD · Ansys · FlexSim' },
       { icon: Layers, label: 'Quality & Process', value: 'Lean Six Sigma · DMAIC · Root Cause Analysis · 5S' },
     ];
 
