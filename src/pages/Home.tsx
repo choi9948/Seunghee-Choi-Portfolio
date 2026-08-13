@@ -46,7 +46,7 @@ import React from 'react';
         role: 'Lean Performance Systems Assistant',
         company: 'S&C Electric Ltd.',
         period: 'May 2026 — Aug 2026',
-        description: 'Optimized manufacturing workflows and quality controls while digitizing continuous improvement operations.',
+        description: 'Optimized switchgear manufacturing workflows and quality controls while digitizing continuous improvement operations.',
         achievements: [
           'Collected time study data and developed FlexSim process simulations for welding operations, optimizing workstation layouts to increase weekly manufacturing thorughput by 50%',
           'Collaborated with QA teams and paint line operators to establish 3 SOPs for colour changeovers and coating applications for electrostatic paint guns, conducting trials that reduced TA% powder paint waste by 26%',
