@@ -86,10 +86,10 @@ const About: React.FC = () => {
           >
             <div className="space-y-4 text-[hsl(var(--muted-foreground))] leading-relaxed">
               <p>
-                I'm a software engineer with 8+ years of experience building distributed systems, cloud infrastructure, and high-performance backend services. My work focuses on the intersection of reliability, scalability, and developer experience.
+                I'm a Mechatronics Engineering student at the University of Waterloo, ppassionate about bringing physical systems to life through the integration of mechanical design, embedded systems, and control software. My work focuses on building functional, reliable systems — from custom CAD assemblies and electrical schematics to autonomous robotic systems.
               </p>
               <p>
-                Currently, I lead the platform infrastructure team at Cloud Systems Inc., where we build the orchestration tools that power our multi-region cloud platform. Previously, I built real-time data pipelines at DataFlow Labs that processed billions of events daily.
+                Currently, I’m applying hands-on engineering principles through co-op experience, design projects, and rapid prototyping. Whether I'm writing embedded C++, tuning control loops, or iterating 3D prints, I enjoy solving complex, multi-disciplinary problems from concept to physical build.
               </p>
             </div>
           </motion.div>
