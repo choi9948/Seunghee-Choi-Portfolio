@@ -13,7 +13,7 @@ import React from 'react';
                     <Terminal className="w-5 h-5 text-white" />
                   </div>
                   <span className="font-mono text-lg font-bold text-white">
-                    dev.engineer
+                    seungheechoi.portfolio
                   </span>
                 </Link>
                 <p className="text-[hsl(var(--muted-foreground))] text-sm max-w-md leading-relaxed">
@@ -80,7 +80,7 @@ import React from 'react';
 
             <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-xs text-[hsl(var(--muted-foreground))]">
-                © 2026 dev.engineer. All rights reserved.
+                © 2026 seungheechoi.portfolio. All rights reserved.
               </p>
               <div className="flex items-center gap-6">
                 <a href="#" className="text-xs text-[hsl(var(--muted-foreground))] hover:text-white transition-colors">
