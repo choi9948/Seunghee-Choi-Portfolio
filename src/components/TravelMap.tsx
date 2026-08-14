@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, X, ChevronRight } from 'lucide-react';
+import { MapPin, X, Camera, Globe } from 'lucide-react';
 
 interface Location {
   id: string;
   name: string;
-  coordinates: { x: number; y: number };
+  coordinates: { x: number; y: number }; // Percentage based
   photos: string[];
   description: string;
 }
@@ -59,7 +59,7 @@ const TravelMap: React.FC = () => {
 
   return (
     <div className="relative w-full aspect-[2/1] bg-[hsl(var(--card))] rounded-3xl border border-white/5 overflow-hidden group">
-      {/* High Quality World Map Background */}
+      {/* High Quality World Map Background Image */}
       <img
         src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1600&q=80"
         alt="World Map"
@@ -75,62 +75,65 @@ const TravelMap: React.FC = () => {
           viewport={{ once: true }}
           whileHover={{ scale: 1.2 }}
           onClick={() => setSelectedLocation(loc)}
-          className="absolute z-10 -translate-x-1/2 -translate-y-1/2 p-2 text-[hsl(var(--accent))] hover:text-white transition-colors group/pin"
+          className="absolute z-10 -translate-x-1/2 -translate-y-1/2 p-2 text-[hsl(var(--accent))] hover:text-white transition-colors"
           style={{ left: `${loc.coordinates.x}%`, top: `${loc.coordinates.y}%` }}
         >
-          <div className="relative flex items-center justify-center">
-            <span className="absolute w-6 h-6 bg-[hsl(var(--accent))]/30 rounded-full animate-ping" />
-            <MapPin className="w-5 h-5 fill-[hsl(var(--accent))]/20 relative z-10" />
-          </div>
-
-          {/* Hover Tooltip */}
-          <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 text-[10px] font-medium bg-black/80 text-white rounded-md whitespace-nowrap opacity-0 group-hover/pin:opacity-100 transition-opacity pointer-events-none border border-white/10 backdrop-blur-sm">
+          <MapPin className="w-6 h-6 drop-shadow-[0_0_8px_rgba(var(--accent),0.5)]" />
+          <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 text-[10px] font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
             {loc.name}
           </span>
         </motion.button>
       ))}
 
-      {/* Selected Location Modal / Popup */}
+      {/* Photo Overlay / Modal */}
       <AnimatePresence>
         {selectedLocation && (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            className="absolute bottom-6 left-6 right-6 z-20 p-6 rounded-2xl bg-black/80 backdrop-blur-md border border-white/10 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 z-20 bg-[hsl(var(--background))]/90 backdrop-blur-sm p-6 md:p-10 flex flex-col"
           >
-            <button
-              onClick={() => setSelectedLocation(null)}
-              className="absolute top-4 right-4 p-1 rounded-full text-white/50 hover:text-white hover:bg-white/10 transition-colors"
-            >
-              <X className="w-4 h-4" />
-            </button>
-
-            <div className="space-y-2 max-w-md">
-              <div className="flex items-center gap-2 text-[hsl(var(--accent))] text-xs font-mono uppercase tracking-wider">
-                <MapPin className="w-3.5 h-3.5" />
-                <span>Visited Location</span>
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h4 className="text-xl font-bold text-white flex items-center gap-2">
+                  <Camera className="w-5 h-5 text-[hsl(var(--accent))]" /> {selectedLocation.name}
+                </h4>
+                <p className="text-sm text-[hsl(var(--muted-foreground))] mt-1">
+                  {selectedLocation.description}
+                </p>
               </div>
-              <h4 className="text-lg font-bold text-white">{selectedLocation.name}</h4>
-              <p className="text-xs text-[hsl(var(--muted-foreground))] leading-relaxed">
-                {selectedLocation.description}
-              </p>
+              <button
+                onClick={() => setSelectedLocation(null)}
+                className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
             </div>
-
-            {/* Photo Previews */}
-            <div className="flex items-center gap-3 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 overflow-y-auto pr-2 custom-scrollbar">
               {selectedLocation.photos.map((photo, i) => (
-                <img
+                <motion.div
                   key={i}
-                  src={photo}
-                  alt={`${selectedLocation.name} ${i + 1}`}
-                  className="w-20 h-20 rounded-xl object-cover border border-white/10 flex-shrink-0"
-                />
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="aspect-video rounded-xl overflow-hidden border border-white/10"
+                >
+                  <img
+                    src={photo}
+                    alt={`${selectedLocation.name} photo ${i + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
               ))}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      <div className="absolute bottom-4 left-6 flex items-center gap-2 text-[10px] font-mono text-[hsl(var(--muted-foreground))] uppercase tracking-widest">
+        <Globe className="w-3 h-3" /> Interactive Travel Log // Click pins to view photos
+      </div>
     </div>
   );
 };
