@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Linkedin, Mail, Download, Cpu, BookOpen, Award, Music, Play, Map, Heart, X } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, Cpu, BookOpen, Award, Music, Play, Map, X } from 'lucide-react';
 import Layout from '../components/Layout';
 import SectionHeading from '../components/SectionHeading';
 import TravelMap from '../components/TravelMap';
@@ -48,7 +48,7 @@ const passions: Passion[] = [
     description: 'Keeping the rhythm. Precision and timing in drumming mirrors the discipline of clean code.',
     image: 'https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=400&h=300&fit=crop',
     embedType: 'video',
-    embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ' // Placeholder video
+    embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder video
   },
   {
     id: 'music',
@@ -57,15 +57,15 @@ const passions: Passion[] = [
     description: 'Deep focus sessions powered by curated soundscapes. Music is the ultimate engineering fuel.',
     image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&h=300&fit=crop',
     embedType: 'spotify',
-    embedUrl: 'https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM3M' // Placeholder playlist
+    embedUrl: 'https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM3M', // Placeholder playlist
   },
   {
     id: 'exploration',
     icon: Map,
     title: 'Exploration',
     description: 'Traveling to new places to understand different cultures and engineering challenges across the globe.',
-    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop'
-  }
+    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop',
+  },
 ];
 
 const About: React.FC = () => {
@@ -75,10 +75,7 @@ const About: React.FC = () => {
     <Layout>
       <section className="py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="About Me"
-            title="Engineer, Builder, Problem Solver"
-          />
+          <SectionHeading eyebrow="About Me" title="Engineer, Builder, Problem Solver" />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -89,17 +86,10 @@ const About: React.FC = () => {
           >
             <div className="space-y-4 text-[hsl(var(--muted-foreground))] leading-relaxed">
               <p>
-                I'm a software engineer with 8+ years of experience building
-                distributed systems, cloud infrastructure, and high-performance
-                backend services. My work focuses on the intersection of
-                reliability, scalability, and developer experience.
+                I'm a software engineer with 8+ years of experience building distributed systems, cloud infrastructure, and high-performance backend services. My work focuses on the intersection of reliability, scalability, and developer experience.
               </p>
               <p>
-                Currently, I lead the platform infrastructure team at Cloud
-                Systems Inc., where we build the orchestration tools that power
-                our multi-region cloud platform. Previously, I built real-time
-                data pipelines at DataFlow Labs that processed billions of
-                events daily.
+                Currently, I lead the platform infrastructure team at Cloud Systems Inc., where we build the orchestration tools that power our multi-region cloud platform. Previously, I built real-time data pipelines at DataFlow Labs that processed billions of events daily.
               </p>
             </div>
           </motion.div>
@@ -115,12 +105,8 @@ const About: React.FC = () => {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="p-6 rounded-2xl bg-[hsl(var(--card))] border border-white/5 text-center"
               >
-                <div className="text-3xl font-bold text-white mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-xs text-[hsl(var(--muted-foreground))]">
-                  {stat.label}
-                </div>
+                <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-xs text-[hsl(var(--muted-foreground))]">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -144,9 +130,7 @@ const About: React.FC = () => {
                   <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center mb-4">
                     <value.icon className="w-5 h-5 text-[hsl(var(--accent))]" />
                   </div>
-                  <h4 className="text-sm font-semibold text-white mb-2">
-                    {value.title}
-                  </h4>
+                  <h4 className="text-sm font-semibold text-white mb-2">{value.title}</h4>
                   <p className="text-xs text-[hsl(var(--muted-foreground))] leading-relaxed">
                     {value.description}
                   </p>
@@ -159,8 +143,8 @@ const About: React.FC = () => {
           <div className="mb-24">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-8 h-px bg-white/10" />
-              <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                Beyond Engineering <Heart className="w-5 h-5 text-red-500" />
+              <h3 className="text-xl font-bold text-white">
+                Beyond Engineering
               </h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -172,7 +156,9 @@ const About: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
                   onClick={() => passion.embedUrl && setActiveEmbed(passion)}
-                  className={`group relative overflow-hidden rounded-2xl bg-[hsl(var(--card))] border border-white/5 ${passion.embedUrl ? 'cursor-pointer' : ''}`}
+                  className={`group relative overflow-hidden rounded-2xl bg-[hsl(var(--card))] border border-white/5 ${
+                    passion.embedUrl ? 'cursor-pointer' : ''
+                  }`}
                 >
                   <div className="aspect-[4/3] overflow-hidden">
                     <img
@@ -224,7 +210,6 @@ const About: React.FC = () => {
                   >
                     <X className="w-5 h-5" />
                   </button>
-                  
                   {activeEmbed.embedType === 'spotify' ? (
                     <iframe
                       src={activeEmbed.embedUrl}
@@ -273,8 +258,7 @@ const About: React.FC = () => {
               href="#"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[hsl(var(--accent))] text-white font-semibold hover:scale-105 transition-transform"
             >
-              <Download className="w-4 h-4" />
-              Download Resume
+              <Download className="w-4 h-4" /> Download Resume
             </a>
             <div className="flex items-center gap-3">
               {[
