@@ -6,10 +6,10 @@ import SectionHeading from '../components/SectionHeading';
 import TravelMap from '../components/TravelMap';
 
 const stats = [
-  { label: 'Years Experience', value: '8+' },
-  { label: 'Projects Shipped', value: '40+' },
-  { label: 'Open Source Stars', value: '1.2K' },
-  { label: 'Users Impacted', value: '50M+' },
+  { label: 'Hours Volunteered', value: '400+' },
+  { label: 'Industry Experience', value: '4 Months' },
+  { label: 'Projects Shipped', value: '4' },
+  { label: '3D Printing Hours', value: '20+' },
 ];
 
 const values = [
