@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-/* eslint-disable-next-line */
+
 import { Github, Linkedin, Mail, Download, Cpu, BookOpen, Award, Music, Camera, Map, Heart } from 'lucide-react';
 import Layout from '../components/Layout';
 import SectionHeading from '../components/SectionHeading';
@@ -182,7 +182,7 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Travel Map Section */}
+
           <div className="mb-24">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-8 h-px bg-white/10" />
@@ -191,7 +191,7 @@ const About: React.FC = () => {
             <TravelMap />
           </div>
 
-          {/* Contact / Resume */}
+        
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
