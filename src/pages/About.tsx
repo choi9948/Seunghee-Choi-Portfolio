@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-{/* eslint-disable-next-line */}
+/* eslint-disable-next-line */
 import { Github, Linkedin, Mail, Download, Cpu, BookOpen, Award, Music, Camera, Map, Heart } from 'lucide-react';
 import Layout from '../components/Layout';
 import SectionHeading from '../components/SectionHeading';
