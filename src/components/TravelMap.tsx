@@ -60,11 +60,11 @@ const TravelMap: React.FC = () => {
   return (
     <div className="relative w-full aspect-[2/1] bg-[hsl(var(--card))] rounded-3xl border border-white/5 overflow-hidden group">
       {/* High Quality World Map Background Image */}
-      <img
-        src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1600&q=80"
-        alt="World Map"
-        className="w-full h-full object-cover opacity-20 transition-opacity group-hover:opacity-30 pointer-events-none filter brightness-90 contrast-125"
-      />
+    <img
+      src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1600&q=80"
+      alt="World Map"
+      className="w-full h-full object-cover object-[65%_center] opacity-20 transition-opacity group-hover:opacity-30 pointer-events-none filter brightness-90 contrast-125"
+    />
 
       {/* Location Markers */}
       {locations.map((loc) => (
