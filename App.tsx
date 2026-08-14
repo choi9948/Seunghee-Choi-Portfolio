@@ -3,13 +3,13 @@ import React, { Suspense, lazy } from 'react';
     import { Theme } from '@radix-ui/themes';
     import { ToastContainer } from 'react-toastify';
     import 'react-toastify/dist/ReactToastify.css';
-    import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+    import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
-    const Home = lazy(() => import('./src/pages/Home.tsx'));
-    const Projects = lazy(() => import('./src/pages/Projects.tsx'));
-    const Experience = lazy(() => import('./src/pages/Experience.tsx'));
-    const About = lazy(() => import('./src/pages/About.tsx'));
-    const NotFound = lazy(() => import('./src/pages/NotFound.tsx'));
+    const Home = lazy(() => import('./src/pages/Home'));
+    const Projects = lazy(() => import('./src/pages/Projects'));
+    const Experience = lazy(() => import('./src/pages/Experience'));
+    const About = lazy(() => import('./src/pages/About'));
+    const NotFound = lazy(() => import('./src/pages/NotFound'));
 
     const Loading: React.FC = () => (
       <div className="min-h-screen flex items-center justify-center bg-[hsl(var(--background))]">
