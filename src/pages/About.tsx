@@ -57,7 +57,7 @@ const passions: Passion[] = [
     description: 'Deep focus sessions powered by curated soundscapes. Music is the ultimate engineering fuel.',
     image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&h=300&fit=crop',
     embedType: 'spotify',
-    embedUrl: 'https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM3M', // Placeholder playlist
+    embedUrl: 'https://open.spotify.com/playlist/23SnaWSewvniKLfCmOcux3?si=3dc1ee852f524657', // Placeholder playlist
   },
   {
     id: 'exploration',
