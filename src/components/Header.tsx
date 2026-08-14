@@ -39,7 +39,7 @@ import React, { useState, useEffect } from 'react';
                 <Terminal className="w-5 h-5 text-white" />
               </div>
               <span className="font-mono text-lg font-bold tracking-tight text-white">
-                dev.engineer
+                seungheechoi.portfolio
               </span>
             </Link>
 
