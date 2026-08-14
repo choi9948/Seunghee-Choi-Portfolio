@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
 import { Github, Linkedin, Mail, Download, Cpu, BookOpen, Award, Music, Camera, Map, Heart } from 'lucide-react';
 import Layout from '../components/Layout';
 import SectionHeading from '../components/SectionHeading';
