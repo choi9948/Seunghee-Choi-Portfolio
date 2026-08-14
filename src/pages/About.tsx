@@ -86,7 +86,7 @@ const About: React.FC = () => {
           >
             <div className="space-y-4 text-[hsl(var(--muted-foreground))] leading-relaxed">
               <p>
-                I'm a Mechatronics Engineering student at the University of Waterloo, ppassionate about bringing physical systems to life through the integration of mechanical design, embedded systems, and control software. My work focuses on building functional, reliable systems — from custom CAD assemblies and electrical schematics to autonomous robotic systems.
+                I'm a Mechatronics Engineering student at the University of Waterloo, passionate about bringing physical systems to life through the integration of mechanical design, embedded systems, and control software. My work focuses on building functional, reliable systems — from custom CAD assemblies and electrical schematics to autonomous robotic systems.
               </p>
               <p>
                 Currently, I’m applying hands-on engineering principles through co-op experience, design projects, and rapid prototyping. Whether I'm writing embedded C++, tuning control loops, or iterating 3D prints, I enjoy solving complex, multi-disciplinary problems from concept to physical build.
