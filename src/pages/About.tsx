@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Download, Cpu, BookOpen, Award, Music, Camera, Map, Heart } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Github, Linkedin, Mail, Download, Cpu, BookOpen, Award, Music, Play, Map, Heart, X } from 'lucide-react';
 import Layout from '../components/Layout';
 import SectionHeading from '../components/SectionHeading';
 import TravelMap from '../components/TravelMap';
@@ -30,20 +30,37 @@ const values = [
   },
 ];
 
-const passions = [
+interface Passion {
+  id: string;
+  icon: any;
+  title: string;
+  description: string;
+  image: string;
+  embedType?: 'spotify' | 'video';
+  embedUrl?: string;
+}
+
+const passions: Passion[] = [
   {
-    icon: Music,
+    id: 'drumming',
+    icon: Play,
     title: 'Drumming',
-    description: 'Keeping the rhythm. I find that the precision and timing required in drumming mirrors the discipline of clean code.',
-    image: 'https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=400&h=300&fit=crop'
+    description: 'Keeping the rhythm. Precision and timing in drumming mirrors the discipline of clean code.',
+    image: 'https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=400&h=300&fit=crop',
+    embedType: 'video',
+    embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ' // Placeholder video
   },
   {
-    icon: Camera,
-    title: 'Photography',
-    description: 'Capturing moments and perspectives. Exploring the world through a lens helps me appreciate detail and composition.',
-    image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=300&fit=crop'
+    id: 'music',
+    icon: Music,
+    title: 'Music Curation',
+    description: 'Deep focus sessions powered by curated soundscapes. Music is the ultimate engineering fuel.',
+    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&h=300&fit=crop',
+    embedType: 'spotify',
+    embedUrl: 'https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM3M' // Placeholder playlist
   },
   {
+    id: 'exploration',
     icon: Map,
     title: 'Exploration',
     description: 'Traveling to new places to understand different cultures and engineering challenges across the globe.',
@@ -52,6 +69,8 @@ const passions = [
 ];
 
 const About: React.FC = () => {
+  const [activeEmbed, setActiveEmbed] = useState<Passion | null>(null);
+
   return (
     <Layout>
       <section className="py-16 md:py-24">
@@ -81,11 +100,6 @@ const About: React.FC = () => {
                 our multi-region cloud platform. Previously, I built real-time
                 data pipelines at DataFlow Labs that processed billions of
                 events daily.
-              </p>
-              <p>
-                When I'm not designing systems or writing code, you'll find me
-                contributing to open source, writing about engineering at scale,
-                or exploring the latest in systems programming with Rust and Go.
               </p>
             </div>
           </motion.div>
@@ -157,7 +171,8 @@ const About: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="group relative overflow-hidden rounded-2xl bg-[hsl(var(--card))] border border-white/5"
+                  onClick={() => passion.embedUrl && setActiveEmbed(passion)}
+                  className={`group relative overflow-hidden rounded-2xl bg-[hsl(var(--card))] border border-white/5 ${passion.embedUrl ? 'cursor-pointer' : ''}`}
                 >
                   <div className="aspect-[4/3] overflow-hidden">
                     <img
@@ -175,13 +190,69 @@ const About: React.FC = () => {
                     <p className="text-xs text-[hsl(var(--muted-foreground))] leading-relaxed">
                       {passion.description}
                     </p>
+                    {passion.embedUrl && (
+                      <span className="inline-block mt-3 text-[10px] font-mono text-[hsl(var(--accent))] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                        Click to {passion.embedType === 'spotify' ? 'Listen' : 'Watch'}
+                      </span>
+                    )}
                   </div>
                 </motion.div>
               ))}
             </div>
           </div>
 
+          {/* Embed Modal */}
+          <AnimatePresence>
+            {activeEmbed && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-[hsl(var(--background))]/90 backdrop-blur-md"
+                onClick={() => setActiveEmbed(null)}
+              >
+                <motion.div
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.9, opacity: 0 }}
+                  className="relative w-full max-w-3xl aspect-video bg-[hsl(var(--card))] rounded-3xl border border-white/10 overflow-hidden shadow-2xl"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button
+                    onClick={() => setActiveEmbed(null)}
+                    className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                  
+                  {activeEmbed.embedType === 'spotify' ? (
+                    <iframe
+                      src={activeEmbed.embedUrl}
+                      width="100%"
+                      height="100%"
+                      frameBorder="0"
+                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                      loading="lazy"
+                      className="w-full h-full"
+                    />
+                  ) : (
+                    <iframe
+                      src={activeEmbed.embedUrl}
+                      width="100%"
+                      height="100%"
+                      title={activeEmbed.title}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  )}
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
+          {/* Travel Map Section */}
           <div className="mb-24">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-8 h-px bg-white/10" />
@@ -190,7 +261,7 @@ const About: React.FC = () => {
             <TravelMap />
           </div>
 
-        
+          {/* Contact / Resume */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
