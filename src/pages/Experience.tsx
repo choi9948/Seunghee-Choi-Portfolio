@@ -11,7 +11,7 @@ import React from 'react';
         period: 'May 2026 — Aug 2026',
         description: 'Optimized switchgear manufacturing workflows and quality controls while digitizing continuous improvement operations.',
         achievements: [
-          'Collected time study data and developed FlexSim process simulations for welding operations, optimizing workstation layouts to increase weekly manufacturing thorughput by 50%',
+          'Collected time study data and developed FlexSim process simulations for welding operations, optimizing workstation layouts to increase weekly manufacturing throughput by 50%',
           'Collaborated with QA teams and paint line operators to establish 3 SOPs for colour changeovers and coating applications for electrostatic paint guns, conducting trials that reduced TA% powder paint waste by 26%',
           'Implemented quality control protocols, including measurement systems analysis for Elcometer thickness guages, scale calibration, drop and scratch testing, and visual defect inspections',
           'Designed a 9-form Lean Six Sigma Project Registry using Power Apps, Power Automate, and Azure, integrating JSON parsing, relational data tracking, automated PDF document generation, and Outlook workflows for user updates',
