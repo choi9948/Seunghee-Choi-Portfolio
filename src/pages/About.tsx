@@ -1,6 +1,19 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Linkedin, Mail, Download, Cpu, BookOpen, Award, Music, Play, Map, X } from 'lucide-react';
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Download,
+  Cpu,
+  BookOpen,
+  Award,
+  Music,
+  Play,
+  Map,
+  X,
+} from 'lucide-react';
+
 import Layout from '../components/Layout';
 import SectionHeading from '../components/SectionHeading';
 import TravelMap from '../components/TravelMap';
@@ -16,17 +29,20 @@ const values = [
   {
     icon: Cpu,
     title: 'Performance First',
-    description: 'Every millisecond matters. I profile, optimize, and measure relentlessly.',
+    description:
+      'Every millisecond matters. I profile, optimize, and measure relentlessly.',
   },
   {
     icon: BookOpen,
     title: 'Continuous Learning',
-    description: 'Technology evolves fast. I stay current through hands-on experimentation.',
+    description:
+      'Technology evolves fast. I stay current through hands-on experimentation.',
   },
   {
     icon: Award,
     title: 'Quality Over Speed',
-    description: 'Sustainable velocity comes from clean architecture and solid testing.',
+    description:
+      'Sustainable velocity comes from clean architecture and solid testing.',
   },
 ];
 
@@ -45,28 +61,36 @@ const passions: Passion[] = [
     id: 'drumming',
     icon: Play,
     title: 'Drumming',
-    description: 'Keeping the rhythm. Precision and timing in drumming mirrors the discipline of clean code.',
-    image: 'https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=400&h=300&fit=crop',
+    description:
+      'Keeping the rhythm. Precision and timing in drumming mirrors the discipline of clean code.',
+    image:
+      'https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=400&h=300&fit=crop',
     embedType: 'video',
-    embedUrl: 
-      ['https://youtube.com/shorts/1a79c_Pjwlk',
-       'https://youtube.com/shorts/2zv2CyWVcHE'],
+    embedUrl: [
+      'https://www.youtube.com/embed/1a79c_Pjwlk',
+      'https://www.youtube.com/embed/2zv2CyWVcHE',
+    ],
   },
   {
     id: 'music',
     icon: Music,
     title: 'Music Curation',
-    description: 'Deep focus sessions powered by curated soundscapes. Music is the ultimate engineering fuel.',
-    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&h=300&fit=crop',
+    description:
+      'Deep focus sessions powered by curated soundscapes. Music is the ultimate engineering fuel.',
+    image:
+      'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&h=300&fit=crop',
     embedType: 'spotify',
-    embedUrl: 'https://open.spotify.com/embed/playlist/23SnaWSewvniKLfCmOcux3', // Placeholder playlist
+    embedUrl:
+      'https://open.spotify.com/embed/playlist/23SnaWSewvniKLfCmOcux3',
   },
   {
     id: 'exploration',
     icon: Map,
     title: 'Exploration',
-    description: 'Traveling to new places to understand different cultures and engineering challenges across the globe.',
-    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop',
+    description:
+      'Traveling to new places to understand different cultures and engineering challenges across the globe.',
+    image:
+      'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop',
   },
 ];
 
@@ -77,8 +101,14 @@ const About: React.FC = () => {
     <Layout>
       <section className="py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <SectionHeading eyebrow="About Me" title="Engineer, Builder, Problem Solver" />
 
+          {/* Page Heading */}
+          <SectionHeading
+            eyebrow="About Me"
+            title="Engineer, Builder, Problem Solver"
+          />
+
+          {/* Introduction */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -88,10 +118,20 @@ const About: React.FC = () => {
           >
             <div className="space-y-4 text-[hsl(var(--muted-foreground))] leading-relaxed">
               <p>
-                I'm a Mechatronics Engineering student at the University of Waterloo, passionate about bringing physical systems to life through the integration of mechanical design, embedded systems, and control software. My work focuses on building functional, reliable systems — from custom CAD assemblies and electrical schematics to autonomous robotic systems.
+                I'm a Mechatronics Engineering student at the University of
+                Waterloo, passionate about bringing physical systems to life
+                through the integration of mechanical design, embedded systems,
+                and control software. My work focuses on building functional,
+                reliable systems — from custom CAD assemblies and electrical
+                schematics to autonomous robotic systems.
               </p>
+
               <p>
-                Currently, I’m applying hands-on engineering principles through co-op experience, design projects, and rapid prototyping. Whether I'm writing embedded C++, tuning control loops, or iterating 3D prints, I enjoy solving complex, multi-disciplinary problems from concept to physical build.
+                Currently, I’m applying hands-on engineering principles through
+                co-op experience, design projects, and rapid prototyping.
+                Whether I'm writing embedded C++, tuning control loops, or
+                iterating 3D prints, I enjoy solving complex, multi-disciplinary
+                problems from concept to physical build.
               </p>
             </div>
           </motion.div>
@@ -105,10 +145,16 @@ const About: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="p-6 rounded-2xl bg-[hsl(var(--card))] border border-white/5 text-center"
+                className="p-6 rounded-2xl bg-[hsl(var(--card))]
+                           border border-white/5 text-center"
               >
-                <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                <div className="text-xs text-[hsl(var(--muted-foreground))]">{stat.label}</div>
+                <div className="text-3xl font-bold text-white mb-1">
+                  {stat.value}
+                </div>
+
+                <div className="text-xs text-[hsl(var(--muted-foreground))]">
+                  {stat.label}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -117,8 +163,12 @@ const About: React.FC = () => {
           <div className="mb-24">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-8 h-px bg-white/10" />
-              <h3 className="text-xl font-bold text-white">What I value</h3>
+
+              <h3 className="text-xl font-bold text-white">
+                What I value
+              </h3>
             </div>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {values.map((value, i) => (
                 <motion.div
@@ -127,13 +177,24 @@ const About: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="p-6 rounded-2xl bg-[hsl(var(--card))] border border-white/5"
+                  className="p-6 rounded-2xl bg-[hsl(var(--card))]
+                             border border-white/5"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center mb-4">
-                    <value.icon className="w-5 h-5 text-[hsl(var(--accent))]" />
+                  <div
+                    className="w-10 h-10 rounded-lg bg-white/5
+                               flex items-center justify-center mb-4"
+                  >
+                    <value.icon
+                      className="w-5 h-5 text-[hsl(var(--accent))]"
+                    />
                   </div>
-                  <h4 className="text-sm font-semibold text-white mb-2">{value.title}</h4>
-                  <p className="text-xs text-[hsl(var(--muted-foreground))] leading-relaxed">
+
+                  <h4 className="text-sm font-semibold text-white mb-2">
+                    {value.title}
+                  </h4>
+
+                  <p className="text-xs text-[hsl(var(--muted-foreground))]
+                                leading-relaxed">
                     {value.description}
                   </p>
                 </motion.div>
@@ -141,14 +202,16 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Passions Section */}
+          {/* Beyond Engineering */}
           <div className="mb-24">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-8 h-px bg-white/10" />
+
               <h3 className="text-xl font-bold text-white">
                 Beyond Engineering
               </h3>
             </div>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {passions.map((passion, i) => (
                 <motion.div
@@ -157,30 +220,76 @@ const About: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
-                  onClick={() => passion.embedUrl && setActiveEmbed(passion)}
-                  className={`group relative overflow-hidden rounded-2xl bg-[hsl(var(--card))] border border-white/5 ${
-                    passion.embedUrl ? 'cursor-pointer' : ''
-                  }`}
+                  onClick={() =>
+                    passion.embedUrl && setActiveEmbed(passion)
+                  }
+                  className={`group relative overflow-hidden rounded-2xl
+                              bg-[hsl(var(--card))] border border-white/5
+                              ${
+                                passion.embedUrl
+                                  ? 'cursor-pointer'
+                                  : ''
+                              }`}
                 >
+                  {/* Image */}
                   <div className="aspect-[4/3] overflow-hidden">
                     <img
                       src={passion.image}
                       alt={passion.title}
-                      className="w-full h-full object-cover opacity-50 group-hover:opacity-80 group-hover:scale-110 transition-all duration-500"
+                      className="w-full h-full object-cover
+                                 opacity-50
+                                 group-hover:opacity-80
+                                 group-hover:scale-110
+                                 transition-all duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--card))] via-[hsl(var(--card))]/40 to-transparent" />
+
+                    <div
+                      className="absolute inset-0
+                                 bg-gradient-to-t
+                                 from-[hsl(var(--card))]
+                                 via-[hsl(var(--card))]/40
+                                 to-transparent"
+                    />
                   </div>
+
+                  {/* Text */}
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="w-8 h-8 rounded-lg bg-[hsl(var(--accent))]/10 flex items-center justify-center mb-3">
-                      <passion.icon className="w-4 h-4 text-[hsl(var(--accent))]" />
+                    <div
+                      className="w-8 h-8 rounded-lg
+                                 bg-[hsl(var(--accent))]/10
+                                 flex items-center justify-center mb-3"
+                    >
+                      <passion.icon
+                        className="w-4 h-4 text-[hsl(var(--accent))]"
+                      />
                     </div>
-                    <h4 className="text-lg font-bold text-white mb-2">{passion.title}</h4>
-                    <p className="text-xs text-[hsl(var(--muted-foreground))] leading-relaxed">
+
+                    <h4 className="text-lg font-bold text-white mb-2">
+                      {passion.title}
+                    </h4>
+
+                    <p
+                      className="text-xs
+                                 text-[hsl(var(--muted-foreground))]
+                                 leading-relaxed"
+                    >
                       {passion.description}
                     </p>
+
                     {passion.embedUrl && (
-                      <span className="inline-block mt-3 text-[10px] font-mono text-[hsl(var(--accent))] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
-                        Click to {passion.embedType === 'spotify' ? 'Listen' : 'Watch'}
+                      <span
+                        className="inline-block mt-3 text-[10px]
+                                   font-mono
+                                   text-[hsl(var(--accent))]
+                                   uppercase tracking-widest
+                                   opacity-0
+                                   group-hover:opacity-100
+                                   transition-opacity"
+                      >
+                        Click to{' '}
+                        {passion.embedType === 'spotify'
+                          ? 'Listen'
+                          : 'Watch'}
                       </span>
                     )}
                   </div>
@@ -196,39 +305,66 @@ const About: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-[hsl(var(--background))]/90 backdrop-blur-md"
+                className="fixed inset-0 z-[100]
+                           flex items-center justify-center
+                           p-6
+                           bg-[hsl(var(--background))]/90
+                           backdrop-blur-md"
                 onClick={() => setActiveEmbed(null)}
               >
                 <motion.div
                   initial={{ scale: 0.9, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0.9, opacity: 0 }}
-                  className="relative w-full max-w-3xl aspect-video bg-[hsl(var(--card))] rounded-3xl border border-white/10 overflow-hidden shadow-2xl"
+                  className="relative w-full max-w-5xl
+                             bg-[hsl(var(--card))]
+                             rounded-3xl
+                             border border-white/10
+                             overflow-hidden
+                             shadow-2xl
+                             p-6"
                   onClick={(e) => e.stopPropagation()}
                 >
+                  {/* Close Button */}
                   <button
                     onClick={() => setActiveEmbed(null)}
-                    className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                    className="absolute top-4 right-4 z-10
+                               p-2 rounded-full
+                               bg-black/50
+                               text-white
+                               hover:bg-black/70
+                               transition-colors"
+                    aria-label="Close"
                   >
                     <X className="w-5 h-5" />
                   </button>
 
+                  {/* Spotify */}
                   {activeEmbed.embedType === 'spotify' ? (
-                    <div className="aspect-video w-full">
+                    <div className="w-full aspect-video">
                       <iframe
-                        src={Array.isArray(activeEmbed.embedUrl) ? activeEmbed.embedUrl[0] : activeEmbed.embedUrl}
+                        src={
+                          Array.isArray(activeEmbed.embedUrl)
+                            ? activeEmbed.embedUrl[0]
+                            : activeEmbed.embedUrl
+                        }
                         width="100%"
                         height="100%"
                         frameBorder="0"
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                         loading="lazy"
                         className="w-full h-full rounded-2xl"
+                        title={activeEmbed.title}
                       />
                     </div>
                   ) : Array.isArray(activeEmbed.embedUrl) ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-6">
+                    /* Multiple YouTube Videos */
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {activeEmbed.embedUrl.map((url, index) => (
-                        <div key={index} className="aspect-video w-full">
+                        <div
+                          key={index}
+                          className="relative aspect-video w-full"
+                        >
                           <iframe
                             src={url}
                             width="100%"
@@ -237,13 +373,16 @@ const About: React.FC = () => {
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen
-                            className="w-full h-full rounded-xl"
+                            className="absolute inset-0
+                                       w-full h-full
+                                       rounded-xl"
                           />
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <div className="aspect-video w-full pt-4">
+                    /* Single Video */
+                    <div className="relative aspect-video w-full">
                       <iframe
                         src={activeEmbed.embedUrl}
                         width="100%"
@@ -252,7 +391,9 @@ const About: React.FC = () => {
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
-                        className="w-full h-full rounded-xl"
+                        className="absolute inset-0
+                                   w-full h-full
+                                   rounded-xl"
                       />
                     </div>
                   )}
@@ -261,12 +402,16 @@ const About: React.FC = () => {
             )}
           </AnimatePresence>
 
-          {/* Travel Map Section */}
+          {/* Travel Map */}
           <div className="mb-24">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-8 h-px bg-white/10" />
-              <h3 className="text-xl font-bold text-white">Travel Log</h3>
+
+              <h3 className="text-xl font-bold text-white">
+                Travel Log
+              </h3>
             </div>
+
             <TravelMap />
           </div>
 
@@ -278,29 +423,78 @@ const About: React.FC = () => {
             transition={{ duration: 0.4 }}
             className="flex flex-wrap items-center gap-4"
           >
+            {/* Resume */}
             <a
-              href="#"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[hsl(var(--accent))] text-white font-semibold hover:scale-105 transition-transform"
+              href="/resume.pdf"
+              download
+              className="inline-flex items-center gap-2
+                         px-6 py-3
+                         rounded-lg
+                         bg-[hsl(var(--accent))]
+                         text-white
+                         font-semibold
+                         hover:scale-105
+                         transition-transform"
             >
-              <Download className="w-4 h-4" /> Download Resume
+              <Download className="w-4 h-4" />
+              Download Resume
             </a>
+
+            {/* Social Links */}
             <div className="flex items-center gap-3">
-              {[
-                { icon: Github, href: 'https://github.com', label: 'GitHub' },
-                { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-                { icon: Mail, href: 'mailto:hello@example.com', label: 'Email' },
-              ].map(({ icon: Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="w-11 h-11 rounded-lg border border-white/10 flex items-center justify-center text-[hsl(var(--muted-foreground))] hover:text-white hover:border-white/20 hover:bg-white/5 transition-all"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              ))}
+
+              {/* GitHub */}
+              <a
+                href="https://github.com/YOUR_USERNAME"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="w-11 h-11 rounded-lg
+                           border border-white/10
+                           flex items-center justify-center
+                           text-[hsl(var(--muted-foreground))]
+                           hover:text-white
+                           hover:border-white/20
+                           hover:bg-white/5
+                           transition-all"
+              >
+                <Github className="w-4 h-4" />
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/YOUR_USERNAME"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-11 h-11 rounded-lg
+                           border border-white/10
+                           flex items-center justify-center
+                           text-[hsl(var(--muted-foreground))]
+                           hover:text-white
+                           hover:border-white/20
+                           hover:bg-white/5
+                           transition-all"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+
+              {/* Email */}
+              <a
+                href="mailto:YOUR_EMAIL@example.com"
+                aria-label="Email"
+                className="w-11 h-11 rounded-lg
+                           border border-white/10
+                           flex items-center justify-center
+                           text-[hsl(var(--muted-foreground))]
+                           hover:text-white
+                           hover:border-white/20
+                           hover:bg-white/5
+                           transition-all"
+              >
+                <Mail className="w-4 h-4" />
+              </a>
+
             </div>
           </motion.div>
         </div>
