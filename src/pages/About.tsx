@@ -37,7 +37,7 @@ interface Passion {
   description: string;
   image: string;
   embedType?: 'spotify' | 'video';
-  embedUrl?: string;
+  embedUrl?: string | string[];
 }
 
 const passions: Passion[] = [
@@ -48,7 +48,9 @@ const passions: Passion[] = [
     description: 'Keeping the rhythm. Precision and timing in drumming mirrors the discipline of clean code.',
     image: 'https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?w=400&h=300&fit=crop',
     embedType: 'video',
-    embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder video
+    embedUrl: 
+      ['https://youtube.com/shorts/1a79c_Pjwlk',
+       'https://youtube.com/shorts/2zv2CyWVcHE'],
   },
   {
     id: 'music',
@@ -210,27 +212,49 @@ const About: React.FC = () => {
                   >
                     <X className="w-5 h-5" />
                   </button>
+
                   {activeEmbed.embedType === 'spotify' ? (
-                    <iframe
-                      src={activeEmbed.embedUrl}
-                      width="100%"
-                      height="100%"
-                      frameBorder="0"
-                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                      loading="lazy"
-                      className="w-full h-full"
-                    />
+                    <div className="aspect-video w-full">
+                      <iframe
+                        src={Array.isArray(activeEmbed.embedUrl) ? activeEmbed.embedUrl[0] : activeEmbed.embedUrl}
+                        width="100%"
+                        height="100%"
+                        frameBorder="0"
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"
+                        className="w-full h-full rounded-2xl"
+                      />
+                    </div>
+                  ) : Array.isArray(activeEmbed.embedUrl) ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-6">
+                      {activeEmbed.embedUrl.map((url, index) => (
+                        <div key={index} className="aspect-video w-full">
+                          <iframe
+                            src={url}
+                            width="100%"
+                            height="100%"
+                            title={`${activeEmbed.title} ${index + 1}`}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                            className="w-full h-full rounded-xl"
+                          />
+                        </div>
+                      ))}
+                    </div>
                   ) : (
-                    <iframe
-                      src={activeEmbed.embedUrl}
-                      width="100%"
-                      height="100%"
-                      title={activeEmbed.title}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                      className="w-full h-full"
-                    />
+                    <div className="aspect-video w-full pt-4">
+                      <iframe
+                        src={activeEmbed.embedUrl}
+                        width="100%"
+                        height="100%"
+                        title={activeEmbed.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        className="w-full h-full rounded-xl"
+                      />
+                    </div>
                   )}
                 </motion.div>
               </motion.div>
