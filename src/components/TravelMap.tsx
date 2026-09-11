@@ -49,7 +49,7 @@ const locations: Location[] = [
   {
     id: 'chicago',
     name: 'Chicago, USA',
-    coordinates: { x: 15, y: 40 },
+    coordinates: { x: 17, y: 30 },
     photos: [],
     description: 'Coming Soon',
   },
