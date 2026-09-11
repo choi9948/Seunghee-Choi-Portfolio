@@ -14,7 +14,7 @@ const locations: Location[] = [
   {
     id: 'seoul',
     name: 'Seoul, South Korea',
-    coordinates: { x: 82, y: 36 },
+    coordinates: { x: 82, y: 37 },
     photos: [],
     description: 'Coming Soon',
   },
@@ -70,7 +70,7 @@ const locations: Location[] = [
   {
     id: 'tsushima-island',
     name: 'Tsushima Island, Japan',
-    coordinates: { x: 82.5, y: 38 },
+    coordinates: { x: 83, y: 41 },
     photos: [],
     description: 'Coming Soon',
   },
