@@ -22,7 +22,7 @@ const stats = [
   { label: 'Hours Volunteered', value: '400+' },
   { label: 'Months in Industry', value: '4' },
   { label: 'Projects Shipped', value: '4' },
-  { label: '3D Printing Hours', value: '20+' },
+  { label: '3D Printing Hours', value: '50+' },
 ];
 
 const values = [
