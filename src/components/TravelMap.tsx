@@ -21,7 +21,7 @@ const locations: Location[] = [
   {
     id: 'toronto',
     name: 'Toronto, Canada',
-    coordinates: { x: 22, y: 35},
+    coordinates: { x: 22.5, y: 35},
     photos: [],
     description: 'Coming Soon',
   },
@@ -56,7 +56,7 @@ const locations: Location[] = [
   {
     id: 'washington-dc',
     name: 'Washington DC, USA',
-    coordinates: { x: 90, y: 80 },
+    coordinates: { x: 23, y: 38},
     photos: [],
     description: 'Coming Soon',
   },
