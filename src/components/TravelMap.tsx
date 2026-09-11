@@ -100,7 +100,7 @@ const TravelMap: React.FC = () => {
           className="absolute z-10 -translate-x-1/2 -translate-y-1/2 p-2 text-[hsl(var(--accent))] hover:text-white transition-colors"
           style={{ left: `${loc.coordinates.x}%`, top: `${loc.coordinates.y}%` }}
         >
-          <MapPin className="w-6 h-6 drop-shadow-[0_0_8px_rgba(var(--accent),0.5)]" />
+          <MapPin className="w-4 h-4 drop-shadow-[0_0_8px_rgba(var(--accent),0.5)]" />
           <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 text-[10px] font-mono whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
             {loc.name}
           </span>
