@@ -28,14 +28,14 @@ const locations: Location[] = [
   {
     id: 'quebec-city',
     name: 'Quebec City, Canada',
-    coordinates: { x: 25, y: 30 },
+    coordinates: { x: 25, y: 30.5},
     photos: [],
     description: 'Coming Soon',
   },
   {
     id: 'montreal',
     name: 'Montreal, Canada',
-    coordinates: { x: 23.5, y: 29.5 },
+    coordinates: { x: 23, y: 32 },
     photos: [],
     description: 'Coming Soon',
   },
