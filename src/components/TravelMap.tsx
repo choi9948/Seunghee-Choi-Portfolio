@@ -70,7 +70,7 @@ const locations: Location[] = [
   {
     id: 'tsushima-island',
     name: 'Tsushima Island, Japan',
-    coordinates: { x: 90, y: 80 },
+    coordinates: { x: 82.5, y: 38 },
     photos: [],
     description: 'Coming Soon',
   },
